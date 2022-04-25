@@ -11,6 +11,10 @@ This was written in Java and uses the Java Swing library for the UI components.
 
 - Java 8 or above
 
+## How to Run Application
+
+The main method is in the **Main.java file**, which is located in the default package.
+
 ## How to add a new entry to the activity viewer
 
 This program was set up in such a way that a new entry can be added without having to edit any code!
