@@ -64,8 +64,11 @@ public class NameSelector extends JPanel {
         });
 
         this.add(namesListScroll, BorderLayout.CENTER);
+    }
+
+    public void selectName(int index) {
         if (namesList.getModel().getSize() > 0) {
-            namesList.setSelectedIndex(0);
+            namesList.setSelectedIndex(index);
         }
     }
 

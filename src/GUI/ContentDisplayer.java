@@ -6,6 +6,8 @@ import Models.ActivityContent;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class ContentDisplayer extends JPanel {
     JTextPane contentText;
@@ -23,9 +25,14 @@ public class ContentDisplayer extends JPanel {
         this.add(contentText, BorderLayout.NORTH);
 
         imageDisplay = new ImageDisplay(null);
-        JScrollPane imageScroll = new JScrollPane(imageDisplay);
+        // JScrollPane imageScroll = new JScrollPane(imageDisplay);
+        this.add(imageDisplay, BorderLayout.CENTER);
 
-        this.add(imageScroll, BorderLayout.CENTER);
+        this.addComponentListener(new ComponentAdapter() {
+            public void componentResized(ComponentEvent e) {
+                imageDisplay.repaint();
+            }
+        });
     }
 
     public void setContent(ActivityContent activityContent) {
@@ -35,5 +42,6 @@ public class ContentDisplayer extends JPanel {
                 activityContent.getActivityDescription()));
 
         imageDisplay.setImage("./images/" + activityContent.getImageName());
+        imageDisplay.repaint();
     }
 }
