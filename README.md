@@ -1,4 +1,4 @@
-# Favorite Activity Viewer
+git # Favorite Activity Viewer
 
 ## Application Details
 
